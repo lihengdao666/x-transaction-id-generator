@@ -1,22 +1,22 @@
 # x-transaction-id-generator
 
-A lightweight generator for X web request transaction IDs.
+一个轻量的 X Web 请求 transaction ID 生成器。
 
-[中文文档](./README.zh-CN.md)
+[English](./README.md)
 
-## What It Does
+## 功能
 
-This package generates the value used by the `x-client-transaction-id` request header in X web requests.
+本库用于生成 X Web 请求头 `x-client-transaction-id` 的值。
 
-It focuses only on parsing and generation. Network requests are left to the caller, so you can use your own `fetch`, `axios`, proxy, cookies, retry logic, or existing HTTP client.
+它只负责解析和生成，不负责网络请求。你可以自行使用 `fetch`、`axios`、代理、cookies、重试逻辑或已有 HTTP 客户端。
 
-## Install
+## 安装
 
 ```bash
 npm install x-transaction-id-generator
 ```
 
-## Usage
+## 使用
 
 ```ts
 import {
@@ -39,9 +39,9 @@ const transactionId = await generateTransactionId("GET", "/i/api/graphql/example
 });
 ```
 
-## Reusable Generator
+## 可复用 Generator
 
-Create a generator once when you need to generate multiple IDs from the same page metadata.
+如果要基于同一份页面元数据生成多个 ID，可以创建可复用 generator。
 
 ```ts
 import { createTransactionIdGenerator } from "x-transaction-id-generator";
@@ -67,14 +67,14 @@ extractLoadingAnimationFrames(homeHtml)
 generateAnimationKey(key, frames, indices, options)
 ```
 
-## Notes
+## 注意事项
 
-- `homeHtml` should be the X app shell HTML.
-- `ondemandSource` should be the source code of the resolved `ondemand.s` chunk.
-- `path` can be a URL path or a full URL. Query strings are ignored for hashing.
-- This package does not provide authentication, cookies, scraping, or HTTP retry behavior.
+- `homeHtml` 应为 X app shell HTML。
+- `ondemandSource` 应为解析出的 `ondemand.s` chunk 源码。
+- `path` 可以是 URL path 或完整 URL。query string 不参与哈希。
+- 本库不提供认证、cookies、抓取或 HTTP 重试能力。
 
-## Reference
+## 参考
 
 - https://h3d4.top/posts/x-client-transaction-id.html
 
