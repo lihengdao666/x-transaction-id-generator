@@ -1,0 +1,34 @@
+{
+  "name": "x-transaction-id-generator",
+  "version": "0.1.0",
+  "description": "A lightweight generator for X web request transaction IDs.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/**/*.test.js"
+  },
+  "keywords": [
+    "x",
+    "twitter",
+    "transaction-id"
+  ],
+  "author": "lihengdao666",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "linkedom": "^0.18.13"
+  }
+}
